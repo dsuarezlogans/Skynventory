@@ -26,10 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     protected Button bLogin;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +44,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    // User is signed in
+
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
-                    // User is signed out
+
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
-                // ...
+
             }
         };
 
@@ -89,16 +85,19 @@ public class LoginActivity extends AppCompatActivity {
 
         //showProgressDialog();
 
-        // [START create_user_with_email]
-        mAuth.createUserWithEmailAndPassword(email, password)
+
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
+                        if (task.isSuccessful()){
+
+                            Toast.makeText(LoginActivity.this, "Authentication success.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
                         if (!task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
@@ -109,7 +108,6 @@ public class LoginActivity extends AppCompatActivity {
                         // [END_EXCLUDE]
                     }
                 });
-        // [END create_user_with_email]
     }
 
     private boolean validarFormulario() {
