@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "712221671562",
+    "firebase_url": "https://skynventorydb.firebaseio.com",
+    "project_id": "skynventorydb",
+    "storage_bucket": "skynventorydb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712221671562:android:e890172c8afe2285",
+        "android_client_info": {
+          "package_name": "ve.com.dsuarez.skynventory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712221671562-uap9abfluihg4kst9fqa00ulhrsn1cr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi0TJsx85mr8F5pZIZMS00jB-3DOqD6bE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
